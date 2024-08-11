@@ -10,6 +10,7 @@ import Message from "@/app/Components/Message";
 
 
 const page: React.FC = () => {
+  const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
   const [currentDialog, setDialog] = useState({});
   const [input, setinput] = useState({});
@@ -21,7 +22,7 @@ const page: React.FC = () => {
         <SearchBar input={input} setinput={setinput} get={data} set={setData} />
         <Photos setlog={setDialog} get={data} set={setData}/>
    
-          <PopUp get={currentDialog}/>
+          <PopUp count={count} setcount={setCount} get={currentDialog}/>
           {/* <Message /> */}
           
            {/* <Total /> */}

@@ -6,12 +6,15 @@ import React from "react";
 
 export default function PopUp(props: any) { 
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const {get} = props;
+  const {get, count, setcount} = props;
   
   useEffect(()=> {
+    if(count != 0) {
     buttonRef?.current?.click();
+    }
+    setcount(1);
   },[get]);
-  buttonRef?.current?.click();
+
   return (
 
 
