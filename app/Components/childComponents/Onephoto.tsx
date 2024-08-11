@@ -19,7 +19,7 @@ return {...pre, random: Math.random()};
       className=" bg-background cursor-pointer rounded-lg overflow-hidden shadow-sm"
     >
       <Image
-        src={`  ${e.imgSrc == "/placeholder.svg" ? "https://gen-z-hub.vercel.app/placeholder.svg" : `https://exam.shekhauniexam.in/${e.imgSrc}`}  `}
+        src={e.imgSrc == "/placeholder.svg" ? "/placeholder.svg" : `https://exam.shekhauniexam.in/${e.imgSrc}`}
         className="w-full h-full object-cover"
         alt="My Image"
         width={200}
