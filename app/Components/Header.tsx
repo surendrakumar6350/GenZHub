@@ -45,7 +45,7 @@ const Header: React.FC = (props: MountainIconProps) => {
               
             </Link>
           </nav>
-          <GoogleLogin onSuccess={(credentialResponse) => {console.log(credentialResponse);}} onError={() => { console.log("Login Failed"); }}/>
+          {/* <GoogleLogin onSuccess={(credentialResponse) => {console.log(credentialResponse);}} onError={() => { console.log("Login Failed"); }}/> */}
         </div>
       </header>
       </div>

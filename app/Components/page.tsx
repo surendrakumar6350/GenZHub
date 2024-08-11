@@ -6,9 +6,19 @@ import { useEffect, useState } from "react"
 export default function Paginate(props: any) {
     const [state,setState] = useState(1);
     const {set, input, length} = props;
+
+
+const changesrc = (pre: any)=> {
+return pre.map((e: any)=> {
+return {...e, imgSrc: "/placeholder.svg"}
+})
+}
+
     useEffect(()=> {
       (async()=> {
         if(length.length > 0) {
+          set((pre: any)=> changesrc(pre))
+          window.scrollTo({ top: 0, behavior: 'smooth' });
           const res = await getStudents(input,state);
           set(res?.user);
         }
@@ -23,9 +33,9 @@ export default function Paginate(props: any) {
   return (
 <Pagination className="my-10 mr-18">
       <PaginationContent>
-        <PaginationItem className={state < 2 ? "hidden" : "block rounded-sm"}>
+        {/* <PaginationItem className={state < 2 ? "hidden" : "block rounded-sm"}>
           <PaginationPrevious className="cursor-pointer" onClick={()=> setState((pre)=> --pre)} />
-        </PaginationItem>
+        </PaginationItem> */}
         <PaginationItem className="cursor-pointer">
           <PaginationLink style={{backgroundColor: `${state == 1 ? 'rgba(255, 0, 0, 0.5)' : ''}`}} className={`cursor-pointer`} isActive={state == 1}  onClick={()=> setState(1)}>1</PaginationLink>
         </PaginationItem>
@@ -43,9 +53,9 @@ export default function Paginate(props: any) {
         <PaginationItem>
           <PaginationLink style={{backgroundColor: `${state == 5 ? 'rgba(255, 0, 0, 0.5)' : ''}`}} className="cursor-pointer" isActive={state == 5} onClick={()=> setState(5)}>5</PaginationLink>
         </PaginationItem>
-        <PaginationItem className={state > 4 ? "hidden" : "block"}>
+        {/* <PaginationItem className={state > 4 ? "hidden" : "block"}>
           <PaginationNext className="cursor-pointer"  onClick={()=> setState((pre)=> ++pre)}   />
-        </PaginationItem>
+        </PaginationItem> */}
       </PaginationContent>
     </Pagination>
   )}

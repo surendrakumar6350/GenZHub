@@ -18,17 +18,17 @@ export default function PopUp(props: any) {
   return (
 
 
-    <Dialog>
+    <Dialog >
     <DialogTrigger asChild>
-      <Button className="hidden" ref={buttonRef} variant="outline"></Button>
+      <Button  className="hidden" ref={buttonRef} variant="outline"></Button>
     </DialogTrigger>
 
-    <DialogContent className="text-xs max-h-[550px] sm:max-w-[400px] sm:max-h-[700px]">
-      <div className="flex flex-col space-y-1.5 bg-primary text-primary-foreground p-6">
+    <DialogContent className="text-xs max-h-full sm:max-w-[400px] sm:max-h-[700px]">
+      <div className="flex flex-col space-y-1.5 bg-primary text-primary-foreground p-2">
         <div className="flex items-center justify-between">
           <div className="space-y-1">
             <div className="flex items-center space-x-4">
-              <span className="relative flex shrink-0 overflow-hidden rounded-full h-12 w-12">
+              <span className="relative flex shrink-0 overflow-hidden rounded-full h-20 w-20">
                 <img
                   className="aspect-square h-full w-full"
                   alt="John Doe"
@@ -36,7 +36,7 @@ export default function PopUp(props: any) {
                 />
               </span>
               <div className="space-y-1">
-                <h3 className="text-2xl font-bold">{get.studentName}</h3>
+                <h3 className="text-xl font-bold">{get.studentName}</h3>
                 <p className="text-sm text-primary-foreground/80">Student</p>
               </div>
             </div>

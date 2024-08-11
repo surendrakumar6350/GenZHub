@@ -5,6 +5,11 @@ module.exports = {
           protocol: 'https',
           hostname: 'exam.shekhauniexam.in'
         },
+        {
+          protocol: 'https',
+          hostname: 'gen-z-hub.vercel.app'
+        }
       ],
+      dangerouslyAllowSVG: true
     },
   }

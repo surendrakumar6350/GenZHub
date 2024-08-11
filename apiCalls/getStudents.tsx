@@ -30,7 +30,7 @@ export const getStudents = async (data: any, page: any)=> {
     }
 
     try {
-        const response = await axios.get(`${BASE_URL}${str}`);
+        const response = await axios.get(`${str}`);
         const responseData = response.data;
         return responseData;
       } catch (error) {

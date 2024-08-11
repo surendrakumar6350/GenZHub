@@ -20,7 +20,7 @@ const page: React.FC = () => {
       
         <Header />
         <SearchBar input={input} setinput={setinput} get={data} set={setData} />
-        <Photos setlog={setDialog} get={data} set={setData}/>
+        <Photos curlog={currentDialog} setlog={setDialog} get={data} set={setData}/>
    
           <PopUp count={count} setcount={setCount} get={currentDialog}/>
           {/* <Message /> */}
