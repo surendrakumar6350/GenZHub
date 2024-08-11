@@ -1,5 +1,5 @@
 import axios from "axios"
-
+import { BASE_URL } from "@/Constants"
 // let data = {
 //     name: 'Student',
 //     fatherName: 'Father',
@@ -30,7 +30,7 @@ export const getStudents = async (data: any, page: any)=> {
     }
 
     try {
-        const response = await axios.get(`http://localhost:3000${str}`);
+        const response = await axios.get(`${BASE_URL}${str}`);
         const responseData = response.data;
         return responseData;
       } catch (error) {

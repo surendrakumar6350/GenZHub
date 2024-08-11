@@ -79,8 +79,8 @@ export default function SearchBar(props: any) {
         
       </div>
 
-      <div className="flex mx-auto items-center w-full max-w-md rounded-md">
-      <button onClick={clicked} className="text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">{loading ? "Loading..." : "Search"}</button>
+      <div className="flex mx-auto items-center w-full justify-end max-w-md rounded-md">
+      <Button onClick={clicked} className="mr-1 w-[140px] mt-2 bg-primary text-primary-foreground hover:scale-105 transition-transform">{loading ? "Loading..." : "Search"}</Button>
         </div>
 
     </div>

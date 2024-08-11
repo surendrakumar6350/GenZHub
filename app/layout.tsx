@@ -1,4 +1,3 @@
-"use client"
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -26,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <GoogleOAuthProvider clientId="521164846169-acl32c6s15bu9hecu3mfaannc0cboeq6.apps.googleusercontent.com">
+      <GoogleOAuthProvider clientId={`${process.env.CLIENT_ID}`}>
       <body  className={cn(
           'antialiased',
           fontHeading.variable,
