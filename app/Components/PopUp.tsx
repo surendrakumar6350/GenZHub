@@ -11,10 +11,7 @@ export default function PopUp(props: any) {
   useEffect(()=> {
     buttonRef?.current?.click();
   },[get]);
-  useEffect(()=> {
-    buttonRef?.current?.click();
-  },[get]);
-  
+  buttonRef?.current?.click();
   return (
 
 
