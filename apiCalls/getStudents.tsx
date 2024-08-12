@@ -38,3 +38,16 @@ export const getStudents = async (data: any, page: any)=> {
         return null;
       }
     }
+
+
+
+    export const googlesignup = async(data: any)=> {
+        try {
+            const response = await axios.post(`/api/signup`, data);
+            const responseData = response.data;
+            return responseData;
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+    }

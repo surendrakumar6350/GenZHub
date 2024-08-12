@@ -15,7 +15,7 @@ export default function SearchBar(props: any) {
   };
   return (
     <div className="mx-auto w-full">
-      <div className="flex mx-auto items-center w-full max-w-md rounded-md border bg-background">
+      <div className="px-5 sm:px-0 flex mx-auto items-center w-full max-w-md rounded-md bg-background">
         <Input
           type="search"
           onChange={(e) => setinput({ ...input, name: e.target.value })}
@@ -41,12 +41,22 @@ export default function SearchBar(props: any) {
 
       </div>
 
-      <div className="flex mx-auto items-center w-full max-w-md rounded-md border bg-background">
+      <div className="px-5 sm:px-0 flex mx-auto items-center w-full max-w-md rounded-md bg-background">
+
+
+      <Input
+          type="search"
+          onChange={(e) => setinput({ ...input, mobile: e.target.value })}
+          placeholder="Mobile"
+          className="sm:hidden block flex-1 px-4 py-2 border"
+        />
+
+
       <Input
           type="search"
           onChange={(e) => setinput({ ...input, address: e.target.value })}
           placeholder="Address"
-          className="flex-1 px-4 py-2 border"
+          className=" hidden sm:block flex-1 px-4 py-2 border"
         />
         
 
@@ -79,10 +89,15 @@ export default function SearchBar(props: any) {
         
       </div>
 
-      <div className="flex mx-auto items-center w-full justify-end max-w-md rounded-md">
-      <Button onClick={clicked} className="mr-1 w-[140px] mt-2 bg-primary text-primary-foreground hover:scale-105 transition-transform">{loading ? "Loading..." : "Search"}</Button>
+      <div className="px-5 sm:px-0 flex mx-auto items-center w-full justify-end max-w-md rounded-md">
+      <Input
+          type="search"
+          onChange={(e) => setinput({ ...input, address: e.target.value })}
+          placeholder="Address"
+          className="sm:hidden block flex-1 px-4 py-2 border"
+        />
+      <Button onClick={clicked} className="mx-1 w-[140px] bg-primary text-primary-foreground hover:scale-105 transition-transform">{loading ? "Loading..." : "Search"}</Button>
         </div>
-
     </div>
   );
 }

@@ -1,54 +1,32 @@
+"use client"
 import React from 'react'
 
 const Message = () => {
   return (
     <>
-    
-<div className="flex items-center p-4 mb-4 text-sm text-blue-800 border border-blue-300 rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400 dark:border-blue-800" role="alert">
-  <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-  </svg>
-  <span className="sr-only">Info</span>
-  <div>
-    <span className="font-medium">Info alert!</span> Change a few things up and try submitting again.
+
+
+<section className="bg-gray-400 h-full m-h-screen w-full justify-center items-center">
+  
+  
+  <div className="m-auto w-full sm:w-[500px] md:w-[800px] bg-pink-100 border-t-4 border-pink-500 rounded-b text-pink-900 px-4 py-3 shadow-md mb-10" role="alert">
+  <div className="flex">
+    <div className="py-1"><svg className="fill-current h-6 w-6 text-pink-500 mr-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"/></svg></div>
+    <div>
+      <p className="font-bold inline">Get Instant Access to</p> <p style={{color: "red"}} className='inline bg-border font-extrabold'>3,39,345+</p> <p className="font-bold inline"> Student Profiles and Records</p>
+      <p className="text-xs text-wrap font-bold">*Get Accurate Results: Fill in as Many Fields as Possible</p>
+      <p className="text-xs text-wrap font-bold">*Enter Address in Parts: House No., Street, City, State, and Pin Code</p>
+      <code className="text-xs text-wrap ml-2 block">Sikar, Rajasthan, India ❌</code>
+      <code className="text-xs text-wrap ml-2 block">Sikar ✅</code>
+      <code className="text-xs text-wrap ml-2 block">House no.4 ✅</code>
+      <code className="text-xs text-wrap ml-2 block">Ward no.7 ✅</code>
+    </div>
   </div>
 </div>
-<div className="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400 dark:border-red-800" role="alert">
-  <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-  </svg>
-  <span className="sr-only">Info</span>
-  <div>
-    <span className="font-medium">Danger alert!</span> Change a few things up and try submitting again.
-  </div>
-</div>
-<div className="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800" role="alert">
-  <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-  </svg>
-  <span className="sr-only">Info</span>
-  <div>
-    <span className="font-medium">Success alert!</span> Change a few things up and try submitting again.
-  </div>
-</div>
-<div className="flex items-center p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" role="alert">
-  <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-  </svg>
-  <span className="sr-only">Info</span>
-  <div>
-    <span className="font-medium">Warning alert!</span> Change a few things up and try submitting again.
-  </div>
-</div>
-<div className="flex items-center p-4 text-sm text-gray-800 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600" role="alert">
-  <svg className="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
-  </svg>
-  <span className="sr-only">Info</span>
-  <div>
-    <span className="font-medium">Dark alert!</span> Change a few things up and try submitting again.
-  </div>
-</div>
+
+
+</section>
+
 
     </>
   )
