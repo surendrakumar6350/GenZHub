@@ -18,14 +18,12 @@ return {...pre, random: Math.random()};
       onClick={clicked}
       className=" bg-background cursor-pointer rounded-lg overflow-hidden shadow-sm"
     >
-      <Image
+      <img
         src={e.imgSrc == "/placeholder.svg" ? "/placeholder.svg" : `https://exam.shekhauniexam.in/${e.imgSrc}`}
         className="w-full h-full object-cover"
         alt="My Image"
         width={200}
         height={200}
-        blurDataURL="/placeholder.svg"
-        placeholder="blur"
       />
     </div>
   );

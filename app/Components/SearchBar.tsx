@@ -34,7 +34,7 @@ export default function SearchBar(props: any) {
           type="search"
           onChange={(e) => setinput({ ...input, mobile: e.target.value })}
           placeholder="Mobile"
-          className="flex-1 px-4 py-2 border"
+          className="hidden sm:block flex-1 px-4 py-2 border"
         />
 
 
