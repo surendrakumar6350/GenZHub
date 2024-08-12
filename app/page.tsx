@@ -1,12 +1,16 @@
 "use client"
 import Image from "next/image";
 import { redirect } from 'next/navigation'
-import { useEffect } from "react";
+import { useEffect } from "react";;
 
 export default function Home() {
+
+
   useEffect(()=> {
-    redirect('/v1/home')
+    redirect('/v1/home');
   },[])
+
+
   return (
     
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-background">

@@ -51,3 +51,25 @@ export const getStudents = async (data: any, page: any)=> {
             return null;
           }
     }
+
+    export const getuser = async()=> {
+        try {
+            const response = await axios.post(`/api/verifyuser`);
+            const responseData = response.data;
+            return responseData;
+          } catch (error) {
+            console.error(error);
+            return null;
+          }
+    }
+    
+    export const click = async(data: any)=> {
+      try {
+          const response = await axios.post(`/api/postclick`, data);
+          const responseData = response.data;
+          return responseData;
+        } catch (error) {
+          console.error(error);
+          return null;
+        }
+  }

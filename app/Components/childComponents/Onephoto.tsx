@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { useState } from "react";
+import { click } from "@/apiCalls/getStudents";
 
 export default function Onephoto(props: any) {
   const e = props.e;
   const changeval = (pre: any)=> {
 return {...pre, random: Math.random()};
   }
-  const clicked = () => {
+  const clicked = async() => {
+   const result = await click(e);
+   if(!result.success) {
+    return;
+   }
     if(e.imgSrc == props.curlog.imgSrc) {
       props.setlog((pre: any)=> changeval(pre));
     } else {

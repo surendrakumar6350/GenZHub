@@ -1,13 +1,20 @@
+"use client"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { MountainIconProps } from "./MountainIcon";
 import { getStudents } from "@/apiCalls/getStudents";
 import { useState } from "react";
-
+import toast, { toastConfig } from 'react-simple-toasts';
+import 'react-simple-toasts/dist/theme/dark.css';
+toastConfig({ theme: 'dark' });
 export default function SearchBar(props: any) {
-  const { input, setinput } = props;
+  const { input, setinput, user } = props;
   const [loading, setLoading] = useState(false);
   const clicked = async () => {
+    if(user.picture < 5) {
+      toast("Whoops! Looks like you need to log in");
+      return;
+    }
     setLoading(true);
     const res = await getStudents(input, null);
     props.set(res?.user);

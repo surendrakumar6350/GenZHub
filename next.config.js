@@ -1,3 +1,4 @@
+console.disableYellowBox = true;
 module.exports = {
     images: {
       remotePatterns: [
@@ -12,4 +13,5 @@ module.exports = {
       ],
       dangerouslyAllowSVG: true
     },
+    quiet: true,
   }
