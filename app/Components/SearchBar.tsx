@@ -17,6 +17,7 @@ export default function SearchBar(props: any) {
     setProgress(70);
     if (user.picture < 5) {
       toast("Whoops! Looks like you need to log in");
+      setProgress(100);
       return;
     }
     setLoading(true);

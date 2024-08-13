@@ -19,7 +19,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     connectDb();
     const find = await signup.findOne({ email: data.email });
     if (find?._id) {
-      const response = NextResponse.json({ sucess: true });
+      const response = NextResponse.json({ success: true });
       response.cookies.set("user", find._id, {
         expires: new Date(Date.now() * 160),
         path: "/",
