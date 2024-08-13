@@ -21,6 +21,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/verifyuser/route.js", "app/api/postclick/route.js", "app/api/find/route.js", "app/Components/PopUp.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/api/verifyuser/route.js", "app/api/postclick/route.js", "app/api/find/route.js", "app/Components/PopUp.tsx", "app/Components/SearchBar.js"],
   "exclude": ["node_modules"],
 }

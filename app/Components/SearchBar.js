@@ -11,7 +11,7 @@ import LoadingBar from "react-top-loading-bar";
 import { useRef } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
-export default function SearchBar(props: any) {
+export default function SearchBar(props) {
   const [progress, setProgress] = useState(0);
   let { input, setinput, user, setArrow } = props;
   const [loading, setLoading] = useState(false);
@@ -52,7 +52,7 @@ export default function SearchBar(props: any) {
    },500);
   };
 
-  function onChange(value: any) {
+  function onChange(value) {
     setKey(value);
   }
 
@@ -152,7 +152,7 @@ export default function SearchBar(props: any) {
   );
 }
 
-function SearchIcon(props: MountainIconProps) {
+function SearchIcon(props) {
   return (
     <svg
       className={props.className}
