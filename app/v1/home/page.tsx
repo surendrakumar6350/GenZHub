@@ -10,6 +10,7 @@ import Message from "@/app/Components/Message";
 import { getuser } from "@/apiCalls/getStudents";
 import LoadingBar from "react-top-loading-bar";
 
+
 const page: React.FC = () => {
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
@@ -40,16 +41,17 @@ const page: React.FC = () => {
     })();
   }, [updateuser]);
 
-  useEffect(() => {
-    document.addEventListener("contextmenu", (e) => {
-      e.preventDefault();
-    });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
-        e.preventDefault();
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   document.addEventListener("contextmenu", (e) => {
+  //     e.preventDefault();
+  //   });
+  //   document.addEventListener("keydown", (e) => {
+  //     if (e.key === "F12" || (e.ctrlKey && e.shiftKey && e.key === "I")) {
+  //       e.preventDefault();
+  //     }
+  //   });
+  // }, []);
+
 
   return (
     <>

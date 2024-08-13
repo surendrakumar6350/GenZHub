@@ -8,28 +8,54 @@ import toast, { toastConfig } from "react-simple-toasts";
 import "react-simple-toasts/dist/theme/dark.css";
 toastConfig({ theme: "dark" });
 import LoadingBar from "react-top-loading-bar";
+import { useRef } from "react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function SearchBar(props: any) {
   const [progress, setProgress] = useState(0);
-  const { input, setinput, user, setArrow } = props;
+  let { input, setinput, user, setArrow } = props;
   const [loading, setLoading] = useState(false);
+  const [key, setKey]  = useState("")
+  const captchaRef = useRef()
+
+
+
   const clicked = async () => {
     setProgress(70);
     if (user.picture < 5) {
       setArrow("block");
       toast("Whoops! Looks like you need to log in");
-      setTimeout(()=> {
+      setTimeout(() => {
         setArrow("hidden");
-      },7000);
+      }, 7000);
       setProgress(100);
       return;
     }
+
+    if(key.length < 3) {
+      toast("Invalid captcha");
+      setProgress(100);
+      return;
+    }
+
+    input = {...input, key: key}
+    captchaRef?.current?.reset();
+    setKey("");
+
     setLoading(true);
     const res = await getStudents(input, null);
     setProgress(100);
     props.set(res?.user);
     setLoading(false);
+   setTimeout(()=> {
+    window.scrollBy({ top: 200, behavior: 'smooth' });
+   },500);
   };
+
+  function onChange(value: any) {
+    setKey(value);
+  }
+
   return (
     <div className="mx-auto w-full">
       <LoadingBar
@@ -100,7 +126,6 @@ export default function SearchBar(props: any) {
           <option value="P.G.">P.G.</option>
         </select>
       </div>
-
       <div className="px-5 sm:px-0 flex mx-auto items-center w-full justify-end max-w-md rounded-md">
         <Input
           type="search"
@@ -114,6 +139,14 @@ export default function SearchBar(props: any) {
         >
           {loading ? "Loading..." : "Search"}
         </Button>
+      </div>
+      <div className="w-full h-7 m-auto flex justify-center">
+        <ReCAPTCHA
+          className="mt-4"
+          sitekey="6LcwyCUqAAAAAJRSCdfkXs66rhilWVaw6nFhLTff"
+          onChange={onChange}
+          ref={captchaRef}
+        />
       </div>
     </div>
   );
