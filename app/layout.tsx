@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <GoogleOAuthProvider clientId={`${process.env.CLIENT_ID}`}>
+      <title>GenZHub</title>
       <body  className={cn(
           'antialiased',
           fontHeading.variable,
