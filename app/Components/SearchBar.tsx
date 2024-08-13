@@ -11,12 +11,16 @@ import LoadingBar from "react-top-loading-bar";
 
 export default function SearchBar(props: any) {
   const [progress, setProgress] = useState(0);
-  const { input, setinput, user } = props;
+  const { input, setinput, user, setArrow } = props;
   const [loading, setLoading] = useState(false);
   const clicked = async () => {
     setProgress(70);
     if (user.picture < 5) {
+      setArrow("block");
       toast("Whoops! Looks like you need to log in");
+      setTimeout(()=> {
+        setArrow("hidden");
+      },7000);
       setProgress(100);
       return;
     }

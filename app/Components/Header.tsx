@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import MountainIcon from "@/app/Components/MountainIcon";
@@ -11,7 +11,7 @@ interface MountainIconProps {
   className?: string;
 }
 const Header = (props: any) => {
-  const { updateuser, name, picture, succ } = props;
+  const { updateuser, arrow, name, picture, succ } = props;
 
   const success = async (credentialResponse: any) => {
     const data = await googlesignup(credentialResponse);
@@ -35,13 +35,16 @@ const Header = (props: any) => {
                 src={picture}
                 alt="Default avatar"
               ></img>
-            ) : (
+            ) : ( <>
               <GoogleLogin
                 onSuccess={success}
                 onError={() => {
                   console.log("Login Failed");
                 }}
               />
+              <img src="/arrow.gif" className={`relative ${arrow} right-[20px] sm:right-[150px] lg:right-[300px] xl:right-[400px] w-16 h-16 rounded`} />
+              </>
+              
             )}
             </>   : <img src="/loading.gif" className="w-6 h-6 rounded" />}
             

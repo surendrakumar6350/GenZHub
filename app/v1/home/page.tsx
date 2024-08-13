@@ -17,7 +17,8 @@ const page: React.FC = () => {
   const [input, setinput] = useState({});
   const [user, setUser] = useState({name: "", picture: "Loading", success: null});
   const [updateuser, setupdateuser] = useState("");
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
+  const [arrow, setArrow] = useState("hidden");
 
   useEffect(()=> {
     (async()=>  {
@@ -45,9 +46,9 @@ const page: React.FC = () => {
       />
 
     <div className="h-full w-full">
-        <Header updateuser={setupdateuser} picture={user.picture} succ={user?.success} name={user?.name}/>
+        <Header arrow={arrow} updateuser={setupdateuser} picture={user.picture} succ={user?.success} name={user?.name}/>
         <Message />
-        <SearchBar user={user} input={input} setinput={setinput} get={data} set={setData} />
+        <SearchBar setArrow={setArrow} user={user} input={input} setinput={setinput} get={data} set={setData} />
         <Photos
           curlog={currentDialog}
           setlog={setDialog}
