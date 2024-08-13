@@ -42,14 +42,14 @@ const Header = (props: any) => {
                   console.log("Login Failed");
                 }}
               />
-              <img src="/arrow.gif" className={`relative ${arrow} right-[20px] sm:right-[150px] lg:right-[300px] xl:right-[400px] w-16 h-16 rounded`} />
+              <img src="/arrow.gif" className={`relative ${arrow} right-[15px] sm:right-[150px] lg:right-[300px] xl:right-[400px] w-16 h-16 rounded`} />
               </>
               
             )}
             </>   : <img src="/loading.gif" className="w-6 h-6 rounded" />}
             
 
-            <img src="/logoo.png" className="h-10 w-16 lg:h-20 lg:w-32 text-lg font-semibold" />
+            <img src="/logoo.png" className="h-14 w-22 lg:h-20 lg:w-32 text-lg font-semibold" />
           </div>
         </header>
       </div>
