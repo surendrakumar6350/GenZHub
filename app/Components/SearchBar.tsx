@@ -1,27 +1,37 @@
-"use client"
+"use client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { MountainIconProps } from "./MountainIcon";
 import { getStudents } from "@/apiCalls/getStudents";
 import { useState } from "react";
-import toast, { toastConfig } from 'react-simple-toasts';
-import 'react-simple-toasts/dist/theme/dark.css';
-toastConfig({ theme: 'dark' });
+import toast, { toastConfig } from "react-simple-toasts";
+import "react-simple-toasts/dist/theme/dark.css";
+toastConfig({ theme: "dark" });
+import LoadingBar from "react-top-loading-bar";
+
 export default function SearchBar(props: any) {
+  const [progress, setProgress] = useState(0);
   const { input, setinput, user } = props;
   const [loading, setLoading] = useState(false);
   const clicked = async () => {
-    if(user.picture < 5) {
+    setProgress(70);
+    if (user.picture < 5) {
       toast("Whoops! Looks like you need to log in");
       return;
     }
     setLoading(true);
     const res = await getStudents(input, null);
+    setProgress(100);
     props.set(res?.user);
     setLoading(false);
   };
   return (
     <div className="mx-auto w-full">
+      <LoadingBar
+        color="#f11946"
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <div className="px-5 sm:px-0 flex mx-auto items-center w-full max-w-md rounded-md bg-background">
         <Input
           type="search"
@@ -35,7 +45,6 @@ export default function SearchBar(props: any) {
           placeholder="Father Name"
           className="flex-1 px-4 py-2 border"
         />
-        
 
         <Input
           type="search"
@@ -43,30 +52,22 @@ export default function SearchBar(props: any) {
           placeholder="Mobile"
           className="hidden sm:block flex-1 px-4 py-2 border"
         />
-
-
-
       </div>
 
       <div className="px-5 sm:px-0 flex mx-auto items-center w-full max-w-md rounded-md bg-background">
-
-
-      <Input
+        <Input
           type="search"
           onChange={(e) => setinput({ ...input, mobile: e.target.value })}
           placeholder="Mobile"
           className="sm:hidden block flex-1 px-4 py-2 border"
         />
 
-
-      <Input
+        <Input
           type="search"
           onChange={(e) => setinput({ ...input, address: e.target.value })}
           placeholder="Address"
           className=" hidden sm:block flex-1 px-4 py-2 border"
         />
-        
-
 
         <select
           onChange={(e) => setinput({ ...input, course: e.target.value })}
@@ -93,18 +94,22 @@ export default function SearchBar(props: any) {
           <option value="M.SC">M.SC</option>
           <option value="P.G.">P.G.</option>
         </select>
-        
       </div>
 
       <div className="px-5 sm:px-0 flex mx-auto items-center w-full justify-end max-w-md rounded-md">
-      <Input
+        <Input
           type="search"
           onChange={(e) => setinput({ ...input, address: e.target.value })}
           placeholder="Address"
           className="sm:hidden block flex-1 px-4 py-2 border"
         />
-      <Button onClick={clicked} className="mx-1 w-[140px] bg-primary text-primary-foreground hover:scale-105 transition-transform">{loading ? "Loading..." : "Search"}</Button>
-        </div>
+        <Button
+          onClick={clicked}
+          className="mx-1 w-[140px] bg-primary text-primary-foreground hover:scale-105 transition-transform"
+        >
+          {loading ? "Loading..." : "Search"}
+        </Button>
+      </div>
     </div>
   );
 }
