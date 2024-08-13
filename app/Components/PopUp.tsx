@@ -14,6 +14,9 @@ import { useEffect, useRef,useState } from "react";
 import React from "react";
 import html2canvas from 'html2canvas';
 import { redirect } from 'next/navigation'
+import toast, { toastConfig } from "react-simple-toasts";
+import "react-simple-toasts/dist/theme/dark.css";
+toastConfig({ theme: "dark" });
 
 export default function PopUp(props : any) {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -29,10 +32,6 @@ export default function PopUp(props : any) {
     setcount(1);
   }, [get]);
 
-
-
-
-
   const download = () => {
     const screenshotTarget: any = myElementRef.current;
     console.log(screenshotTarget)
@@ -43,6 +42,7 @@ export default function PopUp(props : any) {
       a.href = base64image;
       a.download = 'image.jpg';
       a.click();
+      toast("Download Started🎉🎉...");
     });
   };
 
