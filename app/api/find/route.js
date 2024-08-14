@@ -5,6 +5,7 @@ import { headers } from "next/headers";
 import { signup } from "@/dbconnection/Schemas/signup";
 import { UAParser } from "ua-parser-js";
 import { click } from "@/dbconnection/Schemas/click";
+import rateLimit from "../../../rateLimit";
 
 export async function GET(request) {
   const { url } = request;
@@ -43,6 +44,10 @@ export async function GET(request) {
     if (!res) {
       return NextResponse.json({ sucess: false });
     } else {
+      const resObj =  await rateLimit(res._id);
+      if(!resObj.success) {
+        return NextResponse.json({success: false, message: "Rate limit exceeded"});
+      }
       let obj = { search: data, user: res, ip: ip, device: parserResults };
       const ress = new click(obj);
       const savedclick = await ress.save();

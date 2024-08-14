@@ -15,10 +15,8 @@ export default function SearchBar(props) {
   const [progress, setProgress] = useState(0);
   let { input, setinput, user, setArrow } = props;
   const [loading, setLoading] = useState(false);
-  const [key, setKey]  = useState("")
-  const captchaRef = useRef()
-
-
+  const [key, setKey] = useState("");
+  const captchaRef = useRef();
 
   const clicked = async () => {
     setProgress(70);
@@ -32,24 +30,29 @@ export default function SearchBar(props) {
       return;
     }
 
-    if(key.length < 3) {
+    if (key.length < 3) {
       toast("Invalid captcha");
       setProgress(100);
       return;
     }
 
-    input = {...input, key: key}
+    input = { ...input, key: key };
     captchaRef?.current?.reset();
     setKey("");
 
     setLoading(true);
     const res = await getStudents(input, null);
+    if (res.message == "Rate limit exceeded") {
+      toast("Daily limit exceeded! Don't worry, you can try again tomorrow!");
+      setProgress(100);
+      setLoading(false);
+    }
     setProgress(100);
     props.set(res?.user);
     setLoading(false);
-   setTimeout(()=> {
-    window.scrollBy({ top: 200, behavior: 'smooth' });
-   },500);
+    setTimeout(() => {
+      window.scrollBy({ top: 200, behavior: "smooth" });
+    }, 500);
   };
 
   function onChange(value) {

@@ -2,6 +2,9 @@ import Image from "next/image";
 import { useState } from "react";
 import { click } from "@/apiCalls/getStudents";
 import LoadingBar from 'react-top-loading-bar'
+import toast, { toastConfig } from "react-simple-toasts";
+import "react-simple-toasts/dist/theme/dark.css";
+toastConfig({ theme: "dark" });
 
 export default function Onephoto(props: any) {
   const [loading, setLoading] = useState("");
@@ -16,7 +19,15 @@ return {...pre, random: Math.random()};
     setLoading("Loading");
    const result = await click(e);
    setProgress(80)
+   if (result.message == "Rate limit exceeded") {
+    toast("Daily limit exceeded! Don't worry, you can try again tomorrow!");
+    setProgress(100)
+    setLoading("");
+    return;
+  }
    if(!result.success) {
+    setProgress(100)
+    setLoading("");
     return;
    }
     if(e.imgSrc == props.curlog.imgSrc) {

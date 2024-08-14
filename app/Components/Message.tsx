@@ -38,8 +38,8 @@ const Message = () => {
               <code className="text-xs text-wrap ml-2 block">
                 Sikar, Rajasthan, India ❌
               </code>
-              <code className="text-xs text-wrap ml-2 block">Sikar ✅</code>
-              <code className="text-xs text-wrap ml-2 block">
+              <code className="text-xs text-wrap ml-2">Sikar ✅</code>
+              <code className="text-xs text-wrap ml-2">
                 House no.4 ✅
               </code>
               <code className="text-xs text-wrap ml-2 block">Ward no.7 ✅</code>

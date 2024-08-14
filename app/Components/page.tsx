@@ -2,6 +2,10 @@
 import { getStudents } from "@/apiCalls/getStudents";
 import { Pagination, PaginationContent, PaginationItem, PaginationPrevious, PaginationLink, PaginationNext } from "@/components/ui/pagination"
 import { useEffect, useState } from "react"
+import toast, { toastConfig } from "react-simple-toasts";
+import "react-simple-toasts/dist/theme/dark.css";
+toastConfig({ theme: "dark" });
+import LoadingBar from "react-top-loading-bar";
 
 export default function Paginate(props: any) {
     const [state,setState] = useState(1);
@@ -20,6 +24,9 @@ return {...e, imgSrc: "/placeholder.svg"}
           set((pre: any)=> changesrc(pre))
           window.scrollTo({ top: 0, behavior: 'smooth' });
           const res = await getStudents(input,state);
+          if (res.message == "Rate limit exceeded") {
+            toast("Daily limit exceeded! Don't worry, you can try again tomorrow!");
+          }
           set(res?.user);
         }
       })()
