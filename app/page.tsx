@@ -1,13 +1,10 @@
-"use client"
-import { redirect } from 'next/navigation'
-import { useEffect } from "react";;
+"use client";
+import { redirect } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
-  useEffect(()=> {
-    redirect('/v1/home');
-  },[])
-  return (
-    <>
-    </>
-  );
+  useEffect(() => {
+    redirect("/v1/home");
+  }, []);
+  return <></>;
 }
