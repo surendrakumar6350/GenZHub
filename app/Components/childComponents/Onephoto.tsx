@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { useState } from "react";
 import { click } from "@/apiCalls/getStudents";
 import LoadingBar from 'react-top-loading-bar'

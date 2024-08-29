@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { MountainIconProps } from "./MountainIcon";
+"use client"
 import Onephoto from "./childComponents/Onephoto";
 
 export default function Photos(props: any) {

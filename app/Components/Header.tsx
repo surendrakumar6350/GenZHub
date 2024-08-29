@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { googlesignup } from "@/apiCalls/getStudents";
@@ -8,13 +9,13 @@ interface MountainIconProps {
   className?: string;
 }
 const Header = (props: any) => {
-  const { updateuser, arrow, name, picture, succ } = props;
+  const { uupdateuser, arrow, name, picture, succ } = props;
 
   const success = async (credentialResponse: any) => {
     const data = await googlesignup(credentialResponse);
     if (data.success) {
       toast("Login successful 🎉");
-      updateuser(Math.random());
+      uupdateuser(Math.random());
     } else {
       toast("Error 😪😯");
     }

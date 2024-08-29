@@ -1,12 +1,4 @@
 import axios from "axios";
-import { BASE_URL } from "@/Constants";
-// let data = {
-//     name: 'Student',
-//     fatherName: 'Father',
-//     address: 'Address',
-//     course: 'Course',
-//     mobile: 'Mobile',
-// }
 
 export const getStudents = async (data: any, page: any) => {
   let str = "/api/find?";

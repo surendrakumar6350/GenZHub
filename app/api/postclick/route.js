@@ -24,7 +24,6 @@ export async function POST(req) {
     });
   }
 
-
   try {
     await connectDb();
     const res = await signup.findOne({ _id: userid });
@@ -45,5 +44,4 @@ export async function POST(req) {
     return NextResponse.json({ success: false });
   }
 
-  
 }

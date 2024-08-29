@@ -1,7 +1,6 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { MountainIconProps } from "./MountainIcon";
 import { getStudents } from "@/apiCalls/getStudents";
 import { useState } from "react";
 import toast, { toastConfig } from "react-simple-toasts";

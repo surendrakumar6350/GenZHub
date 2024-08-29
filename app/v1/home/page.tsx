@@ -63,7 +63,7 @@ const page: React.FC = () => {
       <div className="h-full w-full">
         <Header
           arrow={arrow}
-          updateuser={setupdateuser}
+          uupdateuser={setupdateuser}
           picture={user.picture}
           succ={user?.success}
           name={user?.name}
