@@ -3,19 +3,22 @@ import React, { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
 import { googlesignup } from "@/apiCalls/getStudents";
 import toast, { toastConfig } from "react-simple-toasts";
+import { addduserdetails } from "@/app/redux/Slice";
+import { useDispatch, useSelector } from 'react-redux'
 import "react-simple-toasts/dist/theme/dark.css";
 toastConfig({ theme: "dark" });
 interface MountainIconProps {
   className?: string;
 }
 const Header = (props: any) => {
+  const dispatch = useDispatch();
   const { uupdateuser, arrow, name, picture, succ } = props;
 
   const success = async (credentialResponse: any) => {
     const data = await googlesignup(credentialResponse);
     if (data.success) {
       toast("Login successful 🎉");
-      uupdateuser(Math.random());
+      dispatch(addduserdetails((Math.random())));
     } else {
       toast("Error 😪😯");
     }

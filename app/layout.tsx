@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import "./globals.css";
+import { Providers } from './redux/Providers'
 import { cn } from '@/lib/utils'
 
 const inter = Inter({ subsets: ["latin"] });
@@ -23,6 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    <Providers>
     <html lang="en">
       <GoogleOAuthProvider clientId={`${process.env.CLIENT_ID}`}>
       <title>GenZHub</title>
@@ -33,5 +35,6 @@ export default function RootLayout({
         )}>{children}</body>
       </GoogleOAuthProvider>
     </html>
+    </Providers>
   );
 }

@@ -7,11 +7,13 @@ import PopUp from "@/app/Components/PopUp";
 import Total from "@/app/Components/Total";
 import Paginate from "@/app/Components/page";
 import Message from "@/app/Components/Message";
+import { useDispatch, useSelector } from "react-redux";
 import { getuser } from "@/apiCalls/getStudents";
 import LoadingBar from "react-top-loading-bar";
 
-
 const page: React.FC = () => {
+  //@ts-ignore
+  const updateuser = useSelector((data) => data?.Slice?.data);
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
   const [currentDialog, setDialog] = useState({});
@@ -21,7 +23,6 @@ const page: React.FC = () => {
     picture: "Loading",
     success: null,
   });
-  const [updateuser, setupdateuser] = useState("");
   const [progress, setProgress] = useState(0);
   const [arrow, setArrow] = useState("hidden");
 
@@ -52,7 +53,6 @@ const page: React.FC = () => {
     });
   }, []);
 
-
   return (
     <>
       <LoadingBar
@@ -63,7 +63,6 @@ const page: React.FC = () => {
       <div className="h-full w-full">
         <Header
           arrow={arrow}
-          uupdateuser={setupdateuser}
           picture={user.picture}
           succ={user?.success}
           name={user?.name}
