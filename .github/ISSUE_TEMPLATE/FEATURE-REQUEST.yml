@@ -6,14 +6,6 @@ labels: [
 ]
 body:
   - type: textarea
-    id: reference_issues
-    attributes:
-      label: "Reference Issues"
-      description: Common issues
-      placeholder: "#Issues IDs"
-    validations:
-      required: false
-  - type: textarea
     id: summary
     attributes:
       label: "Summary"
