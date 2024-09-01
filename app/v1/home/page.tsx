@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Photos from "@/app/Components/Photos";
 import SearchBar from "@/app/Components/SearchBar";
-import Header from "@/app/Components/Header";
 import PopUp from "@/app/Components/PopUp";
 import Total from "@/app/Components/Total";
 import Paginate from "@/app/Components/page";
@@ -10,6 +9,7 @@ import Message from "@/app/Components/Message";
 import { useDispatch, useSelector } from "react-redux";
 import { getuser } from "@/apiCalls/getStudents";
 import LoadingBar from "react-top-loading-bar";
+import HeaderNew from "@/app/Components/HeaderNew";
 
 const page: React.FC = () => {
   //@ts-ignore
@@ -60,12 +60,9 @@ const page: React.FC = () => {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
-      <div className="h-full w-full">
-        <Header
-          arrow={arrow}
+      <div className="h-full w-full"> 
+        <HeaderNew
           picture={user.picture}
-          succ={user?.success}
-          name={user?.name}
         />
         <Message />
         <SearchBar
