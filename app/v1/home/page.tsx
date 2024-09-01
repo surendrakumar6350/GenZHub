@@ -10,19 +10,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { getuser } from "@/apiCalls/getStudents";
 import LoadingBar from "react-top-loading-bar";
 import HeaderNew from "@/app/Components/HeaderNew";
+import {setUserdetails} from "../../redux/allSlice";
 
 const page: React.FC = () => {
+  const dispatch = useDispatch();
   //@ts-ignore
   const updateuser = useSelector((data) => data?.Slice?.data);
   const [count, setCount] = useState(0);
   const [data, setData] = useState([]);
   const [currentDialog, setDialog] = useState({});
   const [input, setinput] = useState({});
-  const [user, setUser] = useState({
-    name: "",
-    picture: "Loading",
-    success: null,
-  });
+  //@ts-ignore
+  const user = useSelector((data) => data?.userSlice?.data);
   const [progress, setProgress] = useState(0);
   const [arrow, setArrow] = useState("hidden");
 
@@ -32,11 +31,9 @@ const page: React.FC = () => {
       const res = await getuser();
       setProgress(70);
       if (res.success) {
-        setUser(res);
+        dispatch(setUserdetails(res));
       } else {
-        setUser((pre: any) => {
-          return { ...pre, picture: null };
-        });
+        dispatch(setUserdetails({ ...user, picture: null }));
       }
       setProgress(100);
     })();

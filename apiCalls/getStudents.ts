@@ -42,6 +42,18 @@ export const googlesignup = async (data: any) => {
   }
 };
 
+
+export const allUsers = async () => {
+  try {
+    const response = await axios.post(`/api/allusers`);
+    const responseData = response.data;
+    return responseData.find;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
 export const getuser = async () => {
   try {
     const response = await axios.post(`/api/verifyuser`);
@@ -56,6 +68,18 @@ export const getuser = async () => {
 export const click = async (data: any) => {
   try {
     const response = await axios.post(`/api/postclick`, data);
+    const responseData = response.data;
+    return responseData;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
+
+
+export const allSearchJs = async (data: any) => {
+  try {
+    const response = await axios.post(`/api/allsearch`, data);
     const responseData = response.data;
     return responseData;
   } catch (error) {
