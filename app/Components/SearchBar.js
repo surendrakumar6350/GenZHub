@@ -21,7 +21,7 @@ export default function SearchBar(props) {
     setProgress(70);
     if (user.picture < 5) {
       setArrow("block");
-      toast("Whoops! Looks like you need to log in");
+      toast("Whoops! Looks like you need to Sign In");
       setTimeout(() => {
         setArrow("hidden");
       }, 7000);
