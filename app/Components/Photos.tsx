@@ -11,7 +11,7 @@ export default function Photos(props: any) {
         <div className="mx-5 grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-4">
           {get?.map((e: any) => {
             return (
-              <Onephoto curlog={curlog} e={e} setlog={setlog} />
+              <Onephoto key={e.imgSrc} curlog={curlog} e={e} setlog={setlog} />
             );
           })}
         </div>
