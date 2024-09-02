@@ -87,3 +87,14 @@ export const allSearchJs = async (data: any) => {
     return null;
   }
 };
+
+export const logOut = async () => {
+  try {
+    const response = await axios.post(`/api/logout`);
+    const responseData = response.data;
+    return responseData;
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+};
