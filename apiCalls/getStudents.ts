@@ -1,4 +1,7 @@
 import axios from "axios";
+import toast, { toastConfig } from "react-simple-toasts";
+import "react-simple-toasts/dist/theme/dark.css";
+toastConfig({ theme: "dark" });
 //all api calls
 export const getStudents = async (data: any, page: any) => {
   let str = "/api/find?";
@@ -26,6 +29,7 @@ export const getStudents = async (data: any, page: any) => {
     const responseData = response.data;
     return responseData;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
@@ -37,6 +41,7 @@ export const googlesignup = async (data: any) => {
     const responseData = response.data;
     return responseData;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
@@ -49,6 +54,7 @@ export const allUsers = async () => {
     const responseData = response.data;
     return responseData.find;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
@@ -60,6 +66,7 @@ export const getuser = async () => {
     const responseData = response.data;
     return responseData;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
@@ -71,6 +78,7 @@ export const click = async (data: any) => {
     const responseData = response.data;
     return responseData;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
@@ -83,6 +91,7 @@ export const allSearchJs = async (data: any) => {
     const responseData = response.data;
     return responseData;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
@@ -94,6 +103,7 @@ export const logOut = async () => {
     const responseData = response.data;
     return responseData;
   } catch (error) {
+    toast("Request Failed!! ⚠️⚠️");
     console.error(error);
     return null;
   }
