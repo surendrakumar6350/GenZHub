@@ -1,5 +1,5 @@
 import axios from "axios";
-
+//all api calls
 export const getStudents = async (data: any, page: any) => {
   let str = "/api/find?";
   if (data.name) {
