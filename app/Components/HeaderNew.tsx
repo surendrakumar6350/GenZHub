@@ -2,15 +2,18 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { googlesignup } from "@/apiCalls/getStudents";
+import { googlesignup, logOut } from "@/apiCalls/getStudents";
 import toast, { toastConfig } from "react-simple-toasts";
 import { GoogleLogin } from "@react-oauth/google";
 import { addduserdetails } from "@/app/redux/Slice";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import "react-simple-toasts/dist/theme/dark.css";
+import LoadingBar from "react-top-loading-bar";
 toastConfig({ theme: "dark" });
 
 const HeaderNew = (props: any) => {
+  const [progress, setProgress] = useState(0);
   const dispatch = useDispatch();
   const {picture} = props;
 
@@ -24,8 +27,20 @@ const HeaderNew = (props: any) => {
     }
   };
 
+  const handlelogOut = async()=> {
+    const ans = await logOut();
+    if(ans?.success) {
+      window.location.reload();
+    }
+  }
+
   return (
     <>
+     <LoadingBar
+        color="#f11946"
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <nav className="flex h-[57px] items-center justify-between px-4 py-2 bg-white border-b border-gray-200">
         <div className="flex items-center space-x-4">
           <Link href="#" className="flex items-center space-x-2">
@@ -51,7 +66,7 @@ const HeaderNew = (props: any) => {
         {picture != "Loading" ? (
           <>
             {picture?.length > 5 ? (
-              <Button size={"sm"} variant="outline">
+              <Button onClick={handlelogOut} size={"sm"} variant="outline">
                 Log Out
               </Button>
             ) : (

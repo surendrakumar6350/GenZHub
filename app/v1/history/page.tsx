@@ -60,9 +60,10 @@ export default function Component() {
             </CardHeader>
             <CardContent>
               <div className="space-y-4">
-                {users.map((user: any) => (
+                 {users.length > 0 ? <> {users.map((user: any) => (
                   <User user={user} />
-                ))}
+                ))}</> : <div className="w-full flex justify-center items-center"> <img src="/loading.gif" className="w-10 m-10 h-10 rounded" /> </div>
+                }
               </div>
             </CardContent>
           </Card>
