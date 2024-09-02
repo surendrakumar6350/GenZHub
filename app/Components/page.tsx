@@ -21,8 +21,8 @@ return {...e, imgSrc: "/placeholder.svg"}
     useEffect(()=> {
       (async()=> {
         if(length.length > 0) {
-          set((pre: any)=> changesrc(pre))
           window.scrollTo({ top: 0, behavior: 'smooth' });
+          // set((pre: any)=> changesrc(pre))
           const res = await getStudents(input,state);
           if (res.message == "Rate limit exceeded") {
             toast("Daily limit exceeded! Don't worry, you can try again tomorrow!");
