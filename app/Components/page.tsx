@@ -1,5 +1,5 @@
 "use client";
-import { getStudents } from "@/apiCalls/getStudents";
+import { getStudents } from "@/apiCalls/allApiCalls";
 import {
   Pagination,
   PaginationContent,

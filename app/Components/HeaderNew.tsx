@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { googlesignup, logOut } from "@/apiCalls/getStudents";
+import { googlesignup, logOut } from "@/apiCalls/allApiCalls";
 import toast, { toastConfig } from "react-simple-toasts";
 import { GoogleLogin } from "@react-oauth/google";
 import { addduserdetails } from "@/app/redux/Slice";

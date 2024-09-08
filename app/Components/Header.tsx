@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from "react";
 import { GoogleLogin } from "@react-oauth/google";
-import { googlesignup } from "@/apiCalls/getStudents";
+import { googlesignup } from "@/apiCalls/allApiCalls";
 import toast, { toastConfig } from "react-simple-toasts";
 import { addduserdetails } from "@/app/redux/Slice";
 import { useDispatch, useSelector } from 'react-redux'

@@ -1,7 +1,7 @@
 "use client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { getStudents } from "@/apiCalls/getStudents";
+import { getStudents } from "@/apiCalls/allApiCalls";
 import { useState } from "react";
 import toast, { toastConfig } from "react-simple-toasts";
 import "react-simple-toasts/dist/theme/dark.css";

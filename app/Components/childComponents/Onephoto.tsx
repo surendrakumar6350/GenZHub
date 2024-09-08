@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { click } from "@/apiCalls/getStudents";
+import { click } from "@/apiCalls/allApiCalls";
 import LoadingBar from 'react-top-loading-bar'
 import toast, { toastConfig } from "react-simple-toasts";
 import "react-simple-toasts/dist/theme/dark.css";
