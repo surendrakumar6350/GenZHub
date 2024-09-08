@@ -7,7 +7,7 @@ import Total from "@/app/Components/Total";
 import Paginate from "@/app/Components/page";
 import Message from "@/app/Components/Message";
 import { useDispatch, useSelector } from "react-redux";
-import { getuser } from "@/apiCalls/getStudents";
+import { getuser } from "@/apiCalls/allApiCalls";
 import LoadingBar from "react-top-loading-bar";
 import HeaderNew from "@/app/Components/HeaderNew";
 import {setUserdetails} from "../../redux/allSlice";

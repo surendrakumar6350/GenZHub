@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Search } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { allSearchJs } from "@/apiCalls/getStudents";
+import { allSearchJs } from "@/apiCalls/allApiCalls";
 
 function convertDate(isoDate: any) {
   const date = new Date(isoDate);
