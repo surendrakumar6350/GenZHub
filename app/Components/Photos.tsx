@@ -13,9 +13,9 @@ export default function Photos(props: any) {
               <Onephoto key={e.imgSrc} curlog={curlog} e={e} setlog={setlog} />
             );
           })}
-          {get?.length < 2  && get[0]?.loading == true && <div className="w-full flex justify-center items-center"> <img src="/loading.gif" className="my-10 ml-[46vw] sm:ml-[55vw] md:ml-[70vw] lg:ml-[55vw] justify-center w-20 h-20 rounded" /> </div>}
         </div>
       </div>
+      {get?.length < 2  && get[0]?.loading == true && <div className="w-[100%] m-auto flex justify-center items-center"> <img src="/loading.gif" className="my-20 justify-center w-20 h-20 rounded" /> </div>}
     </div>
   );
 }
