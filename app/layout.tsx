@@ -4,7 +4,7 @@ import "./globals.css";
 import { Providers } from './redux/Providers'
 import { cn } from '@/lib/utils'
 import Script from "next/script";
-
+import type { Metadata } from 'next'
 const inter = Inter({ subsets: ["latin"] });
 
 const fontHeading = Inter({
@@ -19,6 +19,11 @@ const fontBody = Inter({
   variable: '--font-body',
 })
 
+export const metadata: Metadata = {
+  title: 'GenZHub',
+  description: 'Our website aims to provide a comprehensive resource for students to connect',
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +33,6 @@ export default function RootLayout({
     <Providers>
     <html lang="en">
       <GoogleOAuthProvider clientId={`${process.env.CLIENT_ID}`}>
-      <title>GenZHub</title>
       <body  className={cn(
           'antialiased',
           fontHeading.variable,

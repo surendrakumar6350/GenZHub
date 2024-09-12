@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://surendra-dev.in.net/sitemap.xml
