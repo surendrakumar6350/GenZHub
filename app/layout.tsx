@@ -32,6 +32,7 @@ export default function RootLayout({
   return (
     <Providers>
     <html lang="en">
+    <meta name="msvalidate.01" content="5BFEDB060FBC12E19362640F31C2018D" />
       <GoogleOAuthProvider clientId={`${process.env.CLIENT_ID}`}>
       <body  className={cn(
           'antialiased',
